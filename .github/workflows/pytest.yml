@@ -1,5 +1,8 @@
 name: Automated tests
-on: push
+on: 
+  push:
+    paths:
+      - '**.py'
 jobs:
     test:
         runs-on: ubuntu-latest
