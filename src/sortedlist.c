@@ -47,6 +47,16 @@ void deleting(List* l, int a) {
         free(del);
     }
 }
+void destroy(List* l) {
+    Element* current = l->head.next;
+    Element* next;
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+    l->len = 0;
+}
 
 int main() {
     int c;
@@ -71,5 +81,6 @@ int main() {
         }
         scanf("%d", &c);
     }
+    destroy(&mylist);
     return 0;
 }
