@@ -4,6 +4,8 @@ project(balance C)
 
 add_library(stack cm_stack.c)
 
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wpedantic")
+
 add_executable(balance cm_balance.c)
 
 target_link_libraries(balance stack)
