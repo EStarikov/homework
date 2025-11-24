@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "sortedlist.h"
 
-typedef struct Element {
-    int x;
-    struct Element* next;
-} Element;
-typedef struct List {
-    Element head;
-    size_t len;
-} List;
+#ifdef TESTS
+#include "tests.h"
+#endif
+
+
+
 
 void init(List* l) {
     l->head.next = NULL;
@@ -71,7 +71,14 @@ void destroy(List* l) {
     l->len = 0;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "--test") == 0) {
+            #ifdef TESTS
+            return run_all_tests();
+            #endif
+        }
+    }
     int c;
     scanf("%d", &c);
     List mylist;
