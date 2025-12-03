@@ -1,9 +1,10 @@
+#include "stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "stack.h"
 
-int m_index(char open_bracket, char close_bracket) {
+int m_index(char open_bracket, char close_bracket)
+{
     char open[] = "({[";
     char close[] = ")}]";
     int index_open;
@@ -22,7 +23,8 @@ int m_index(char open_bracket, char close_bracket) {
     return 0;
 }
 
-int main() {
+int main()
+{
     char s[] = "hj(fd{f[f}fds])";
     ListElement* head;
     init(&head);
