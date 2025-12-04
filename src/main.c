@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "birepresent.h"
+#include <stdio.h>
 
 int main()
 {
