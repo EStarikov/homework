@@ -46,5 +46,3 @@ void print(int* arr)
     }
     printf("\n");
 }
-
-
