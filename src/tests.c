@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "birepresent.h"
+#include <stdio.h>
 
 void test2to10()
 {
@@ -48,14 +48,15 @@ void testsumma()
     int r[] = { 0, 0, 0, 0, 0, 0, 0, 0 };
     summa(b17, bm43, r);
     int rr[] = { 1, 1, 1, 0, 0, 1, 1, 0 };
-    for (int i = 0; i < 8; i++){
+    for (int i = 0; i < 8; i++) {
         if (rr[i] != r[i]) {
             printf("неверное суммирование");
         }
     }
 }
 
-void main() {
+void main()
+{
     test10to2();
     test2to10();
     testsumma();
