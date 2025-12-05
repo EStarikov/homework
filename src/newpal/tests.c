@@ -32,7 +32,8 @@ void testPal()
     destruct(&list);
 }
 
-void testOneNum() {
+void testOneNum()
+{
     List mylist;
     init(&mylist);
     push(&mylist, 10);
@@ -44,7 +45,8 @@ void testOneNum() {
     destruct(&mylist);
 }
 
-void testNoPal() {
+void testNoPal() 
+{
     List mylist;
     init(&mylist);
     push(&mylist, 10);

@@ -13,9 +13,9 @@ int From2To10(int* arr, int N)
 int biggest(int* arr, int N)
 {
     int m = From2To10(arr, N);
-    for (int i = 0; i <= N; i++) {
+    for (int i = 0; i < N; i++) {
         int x = arr[0];
-        for (int j = 0; j < N - 1; i++) {
+        for (int j = 0; j < N - 1; j++) {
             arr[j] = arr[j + 1];
         }
         arr[N - 1] = x;
