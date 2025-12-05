@@ -45,7 +45,7 @@ void testOneNum()
     destruct(&mylist);
 }
 
-void testNoPal() 
+void testNoPal()
 {
     List mylist;
     init(&mylist);
