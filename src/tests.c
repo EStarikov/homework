@@ -41,7 +41,7 @@ void test10to2()
     }
 }
 
-void testsumma()
+void testSumma()
 {
     int b17[] = { 0, 0, 0, 1, 0, 0, 0, 1 };
     int bm43[] = { 1, 1, 0, 1, 0, 1, 0, 1 };
@@ -59,6 +59,6 @@ void main()
 {
     test10to2();
     test2to10();
-    testsumma();
+    testSumma();
     printf("тесты завершены");
 }
