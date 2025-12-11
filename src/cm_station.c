@@ -1,9 +1,10 @@
+#include "cm_stack.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "cm_stack.h"
 
-int definition(char a) {
+int definition(char a)
+{
     if (a == '+' || a == '-') {
         return 1;
     }
@@ -18,7 +19,9 @@ int definition(char a) {
     }
     return 0;
 }
-int main() {
+
+int main()
+{
     ListElement* head;
     init(&head);
     char s[] = "((7 - 9/ 5) + 4) * 6";
