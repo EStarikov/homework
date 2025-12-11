@@ -1,4 +1,3 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -17,7 +16,9 @@ int From2To10(int* arr)
 {
     int n = 0;
     for (int i = 0; i < 8; i++) {
-        n += (int)pow(2, i) * arr[7 - i];
+        if (arr[7 - i] == 1) {
+            n += (1ULL << i);
+        }
     }
     if (arr[0] == 1) {
         return n - 256;
