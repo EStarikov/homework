@@ -12,11 +12,11 @@ def tree(arr, n, i):
 
 
 def h_sort(arr):
-    l = len(arr)
-    for i in range(l//2, -1, -1):
-        tree(arr, l, i)
-    while l - 1 > 0:
-        arr[0], arr[l-1] = arr[l-1], arr[0]
-        l -= 1
-        tree(arr, l, 0) 
+    length = len(arr)
+    for i in range(length//2, -1, -1):
+        tree(arr, length, i)
+    while length - 1 > 0:
+        arr[0], arr[length-1] = arr[length-1], arr[0]
+        length -= 1
+        tree(arr, length, 0)
     return arr
