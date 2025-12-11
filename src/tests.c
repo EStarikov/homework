@@ -1,7 +1,6 @@
+#include "sortedlist.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "tests.h"
-#include "sortedlist.h"
 
 void emptyList(void)
 {
@@ -19,9 +18,10 @@ void sortedList(void)
 {
     List mylist;
     init(&mylist);
-    int m[] = {3, 10, 19};
+    int m[] = {3, 10, 10, 19};
     push(&mylist, 10);
     push(&mylist, 3);
+    push(&mylist, 10);
     push(&mylist, 19);
     deleting(&mylist, 7);
     Element* current = mylist.head.next;
@@ -54,9 +54,10 @@ void deletingList(void)
 }
 
 
-int run_all_tests()
+int main()
 {
     emptyList();
     sortedList();
     deletingList();
+    return 0;
 }

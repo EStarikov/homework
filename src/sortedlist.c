@@ -1,14 +1,6 @@
+#include "sortedlist.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include "sortedlist.h"
-
-#ifdef TESTS
-#include "tests.h"
-#endif
-
-
-
 
 void init(List* l) {
     l->head.next = NULL;
@@ -59,6 +51,7 @@ void deleting(List* l, int a) {
         free(del);
     }
 }
+
 void destroy(List* l) {
     if (l->head.next == NULL) return;
     Element* current = l->head.next;
@@ -69,38 +62,4 @@ void destroy(List* l) {
         current = next;
     }
     l->len = 0;
-}
-
-int main(int argc, char* argv[]) {
-    for (int i = 1; i < argc; i++) {
-        if (strcmp(argv[i], "--test") == 0) {
-            #ifdef TESTS
-            return run_all_tests();
-            #endif
-        }
-    }
-    int c;
-    scanf("%d", &c);
-    List mylist;
-    init(&mylist);
-    while (c != 0) {
-        if (c == 1) {
-            int value;
-            scanf("%d", &value);
-            push(&mylist, value);
-        }
-
-        if (c == 3) {
-            print(&mylist);
-        }
-
-        if (c == 2) {
-            int del_value;
-            scanf("%d", &del_value);
-            deleting(&mylist, del_value);
-        }
-        scanf("%d", &c);
-    }
-    destroy(&mylist);
-    return 0;
 }
