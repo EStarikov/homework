@@ -1,11 +1,11 @@
 def tree(arr, n, i):
     large = i
-    l = 2 * i + 1
-    r = 2 * i + 2
-    if l < n and arr[l] > arr[large]:
-        large = l
-    if r < n and arr[r] > arr[large]:
-        large = r
+    left = 2 * i + 1
+    right = 2 * i + 2
+    if left < n and arr[left] > arr[large]:
+        large = left
+    if right < n and arr[right] > arr[large]:
+        large = right
     if large != i:
         arr[large], arr[i] = arr[i], arr[large]
         tree(arr, n, large)

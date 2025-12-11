@@ -1,6 +1,6 @@
 import pytest
 from hypothesis import given, strategies as st, settings
-from hsort import tree, h_sort
+from hsort import h_sort
 
 @given(st.lists(st.integers(), min_size=0, max_size=1000))
 @settings(max_examples=500, deadline=40000)
