@@ -53,7 +53,6 @@ void deletingList(void)
     destroy(&mylist);
 }
 
-
 int main()
 {
     emptyList();
