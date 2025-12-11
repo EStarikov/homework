@@ -2,12 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void init(List* l) {
+void init(List* l)
+{
     l->head.next = NULL;
     l->len = 0;
 }
 
-int push(List* l, int a) {
+int push(List* l, int a)
+{
     if (l == NULL) {
         return -1;
     }
@@ -26,7 +28,8 @@ int push(List* l, int a) {
     return 0;
 }
 
-void print(List* l) {
+void print(List* l)
+{
     if (l->head.next == NULL) {
         printf("%s", "List is NULL");
         return;
@@ -39,8 +42,11 @@ void print(List* l) {
     }
 }
 
-void deleting(List* l, int a) {
-    if (l->head.next == NULL) return;
+void deleting(List* l, int a)
+{
+    if (l->head.next == NULL) {
+        return;
+    }
     Element* current = &l->head;
     while (current->next != NULL && current->next->x != a) {
         current = current->next;
@@ -52,8 +58,11 @@ void deleting(List* l, int a) {
     }
 }
 
-void destroy(List* l) {
-    if (l->head.next == NULL) return;
+void destroy(List* l)
+{
+    if (l->head.next == NULL) {
+        return;
+    }
     Element* current = l->head.next;
     Element* next;
     while (current != NULL) {

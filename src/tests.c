@@ -14,11 +14,11 @@ void emptyList(void)
     destroy(&mylist);
 }
 
-void sortedList(void) 
+void sortedList(void)
 {
     List mylist;
     init(&mylist);
-    int m[] = {3, 10, 10, 19};
+    int m[] = { 3, 10, 10, 19 };
     push(&mylist, 10);
     push(&mylist, 3);
     push(&mylist, 10);
