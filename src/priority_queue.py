@@ -38,7 +38,7 @@ class Queue:
             self.roots.append(self.roots[ind_min].child)
             self.roots[-1].parent = None
             tree = self.roots[-1]
-            while tree.sibling != None:
+            while tree.sibling is not None:
                 self.roots.append(tree.sibling)
                 tree1 = tree.sibling
                 tree.sibling = None
