@@ -37,7 +37,8 @@ int push(List* l, int a)
     return 0;
 }
 
-void print(List* l) {
+void print(List* l)
+{
     if (l->head.next == NULL) {
         printf("%s", "List is NULL");
         return;
@@ -50,7 +51,8 @@ void print(List* l) {
     }
 }
 
-void delete(List* l, int a) {
+void delete(List* l, int a)
+{
     if (l->head.next == NULL) {
         return;
     }
