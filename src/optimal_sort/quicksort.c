@@ -1,10 +1,10 @@
 #include "functions.h"
 
-void quicksort(int* mas, int size) {
+void quicksort(int* mas, int size)
+{
     int i = 0;
     int j = size - 1;
     int mid = mas[size / 2];
-
     while (i <= j) {
         while (mas[i] < mid) {
             i++;
@@ -12,7 +12,6 @@ void quicksort(int* mas, int size) {
         while (mas[j] > mid) {
             j--;
         }
-
         if (i <= j) {
             int t = mas[i];
             mas[i] = mas[j];
@@ -21,7 +20,6 @@ void quicksort(int* mas, int size) {
             j--;
         }
     }
-
     if (j > 0) {
         quicksort(mas, ++j);
     }

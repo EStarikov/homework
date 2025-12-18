@@ -1,1 +1,0 @@
-write "make -f Makefile"
