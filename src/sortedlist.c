@@ -96,12 +96,12 @@ int main()
         if (c == 2) {
             int del_value;
             scanf("%d", &del_value);
-            delete(&mylist, del_value);
+            delete (&mylist, del_value);
         }
-        scanf("%d", &c);
         if (c == 3) {
             print(&mylist);
         }
+        scanf("%d", &c);
     }
     destroy(&mylist);
     return 0;
