@@ -64,6 +64,7 @@ void delete(List* l, int a)
         Element* del = current->next;
         current->next = del->next;
         free(del);
+        del = NULL;
     }
 }
 void destroy(List* l)
@@ -76,6 +77,7 @@ void destroy(List* l)
     while (current != NULL) {
         next = current->next;
         free(current);
+        current = NULL;
         current = next;
     }
     l->len = 0;
