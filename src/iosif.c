@@ -6,10 +6,14 @@ typedef struct Element {
     struct Element* next;
 } Element;
 
-void push(Element* l, int len) {
+void push(Element* l, int len)
+{
     Element* current = l;
     for (int i = 2; i <= len; ++i) {
         Element* new_element = (Element*)malloc(sizeof(Element));
+        if (new_element == NULL) {
+            exit(EXIT_FAILURE);
+        }
         new_element->x = i;
         new_element->next = current->next;
         current->next = new_element;
@@ -17,7 +21,8 @@ void push(Element* l, int len) {
     }
 }
 
-int deleting(Element* l, int len, int step) {
+int deleting(Element* l, int len, int step)
+{
     Element* current = l;
     while (len != 1) {
         if (step == 1) {
@@ -38,21 +43,22 @@ int deleting(Element* l, int len, int step) {
     }
     int a = current->x;
     free(current);
+    current = NULL;
     return a;
 }
 
 int main() {
     int n, m;
-    for (n = 1; n <= 10; ++n) {
-        for (m = 1; m <= 10; ++m) {
-            Element* mylist = (Element*)malloc(sizeof(Element));
-            mylist->x = 1;
-            mylist->next = mylist;
-            push(mylist, n);
-            int ans = deleting(mylist, n, m);
-            printf("%d ", ans);
-        }
-        printf("\n");
+    scanf("%d", &n);
+    scanf("%d", &m);
+    Element* mylist = (Element*)malloc(sizeof(Element));
+    if (mylist == NULL) {
+        exit(EXIT_FAILURE);
     }
+    mylist->x = 1;
+    mylist->next = mylist;
+    push(mylist, n);
+    int ans = deleting(mylist, n, m);
+    printf("%d ", ans);
     return 0;
 }
