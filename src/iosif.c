@@ -47,7 +47,8 @@ int deleting(Element* l, int len, int step)
     return a;
 }
 
-int main() {
+int main()
+{
     int n, m;
     scanf("%d", &n);
     scanf("%d", &m);
