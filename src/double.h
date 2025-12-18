@@ -6,7 +6,7 @@ typedef union Number {
 } Number;
 
 void From10To2(int* arr, int d);
-__uint64_t From2To10(int* arr, int l);
+uint64_t From2To10(int* arr, int l);
 void bin(int* array, Number* a);
 int order(int* arr);
 double mantissa(int* arr);
