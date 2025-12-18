@@ -10,18 +10,21 @@ typedef struct List {
     size_t len;
 } List;
 
-void init(List* l) {
+void init(List* l)
+{
     l->head.next = NULL;
     l->len = 0;
 }
 
-int push(List* l, int a) {
+int push(List* l, int a)
+{
     if (l == NULL) {
         return -1;
     }
     Element* newElement = (Element*)malloc(sizeof(Element));
     if (newElement == NULL) {
         return -2;
+        exit(EXIT_FAILURE);
     }
     newElement->x = a;
     Element* current = &l->head;
@@ -47,8 +50,10 @@ void print(List* l) {
     }
 }
 
-void deleting(List* l, int a) {
-    if (l->head.next == NULL) return;
+void delete(List* l, int a) {
+    if (l->head.next == NULL) {
+        return;
+    }
     Element* current = &l->head;
     while (current->next != NULL && current->next->x != a) {
         current = current->next;
@@ -59,8 +64,11 @@ void deleting(List* l, int a) {
         free(del);
     }
 }
-void destroy(List* l) {
-    if (l->head.next == NULL) return;
+void destroy(List* l)
+{
+    if (l->head.next == NULL) {
+        return;
+    }
     Element* current = l->head.next;
     Element* next;
     while (current != NULL) {
@@ -71,7 +79,8 @@ void destroy(List* l) {
     l->len = 0;
 }
 
-int main() {
+int main()
+{
     int c;
     scanf("%d", &c);
     List mylist;
@@ -82,17 +91,15 @@ int main() {
             scanf("%d", &value);
             push(&mylist, value);
         }
-
-        if (c == 3) {
-            print(&mylist);
-        }
-
         if (c == 2) {
             int del_value;
             scanf("%d", &del_value);
-            deleting(&mylist, del_value);
+            delete(&mylist, del_value);
         }
         scanf("%d", &c);
+        if (c == 3) {
+            print(&mylist);
+        }
     }
     destroy(&mylist);
     return 0;
