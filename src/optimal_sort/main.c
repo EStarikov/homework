@@ -12,7 +12,7 @@ int main()
         index++;
     }
     int* numbers = (int*)malloc(sizeof(int) * index);
-    memcpy(numbers, arr, index);
+    memcpy(numbers, arr, index * sizeof(int));
     quicksort(numbers, index);
     for (int i = 0; i < index; i++) {
         if (numbers[i] != arr[i]) {
