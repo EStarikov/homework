@@ -1,6 +1,7 @@
-#include "functions.h"
+#include "quicksort.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
@@ -11,9 +12,7 @@ int main()
         index++;
     }
     int* numbers = (int*)malloc(sizeof(int) * index);
-    for (int i = 0; i < index; i++) {
-        numbers[i] = arr[i];
-    }
+    memcpy(numbers, arr, index);
     quicksort(numbers, index);
     for (int i = 0; i < index; i++) {
         if (numbers[i] != arr[i]) {

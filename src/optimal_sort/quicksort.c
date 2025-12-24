@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "quicksort.h"
 
 void quicksort(int* mas, int size)
 {
